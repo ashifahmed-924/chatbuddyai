@@ -1,0 +1,29 @@
+{
+  "title": {
+    "text": "Transform Your Conversations with Smart",
+    "highlight": "AI Chatbots!",
+    "highlightColor": "primary"
+  },
+  "description": "Discover the power of ChatBuddy AI - your ultimate personal AI companion designed to enhance communication and supercharge your productivity.",
+  "ctaButton": {
+    "text": "Try 7-Days Free Trial",
+    "href": "#"
+  },
+  "ratings": [
+    {
+      "icon": "../assets/google.png",
+      "rating": "4.9 / 5.0",
+      "source": "On Chrome Store"
+    },
+    {
+      "icon": "../assets/google_2.png",
+      "rating": "4.9 / 5.0",
+      "source": "On Chrome Store"
+    }
+  ],
+  "heroImage": {
+    "src": "../assets/Hero_image.png",
+    "alt": "App Demo"
+  }
+}
+

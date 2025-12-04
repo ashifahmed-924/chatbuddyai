@@ -1,0 +1,18 @@
+{
+  "logo": {
+    "src": "../assets/Logo.png",
+    "alt": "ChatBuddy Logo"
+  },
+  "menuItems": [
+    { "label": "Features", "href": "#features" },
+    { "label": "How It Works", "href": "#how-it-works" },
+    { "label": "Pricing", "href": "#pricing" },
+    { "label": "Testimonials", "href": "#testimonials" },
+    { "label": "FAQ", "href": "#faq" }
+  ],
+  "ctaButton": {
+    "text": "Try 7-Days Free Trial",
+    "href": "#"
+  }
+}
+

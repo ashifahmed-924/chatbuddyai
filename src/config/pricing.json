@@ -1,0 +1,71 @@
+{
+  "title": {
+    "text": "Flexible",
+    "highlight": "Pricing",
+    "highlightColor": "primary",
+    "subtext": "for Every Need!"
+  },
+  "description": "Choose the perfect plan for your needs—no hidden fees, just powerful AI at your fingertips!",
+  "annualDiscount": {
+    "text": "41% Annual Discount",
+    "enabled": true
+  },
+  "plans": [
+    {
+      "title": "Starter",
+      "price": "Free",
+      "period": null,
+      "description": "Perfect for individuals getting started.",
+      "features": [
+        "Basic AI chatbot functionality",
+        "50 chatbot interactions",
+        "Limited integrations (Website & Messenger)",
+        "Pre-set chatbot templates",
+        "Basic analytics dashboard",
+        "Standard response speed",
+        "Community support",
+        "1 AI bot instance"
+      ],
+      "button": "Try 7-Days Free Trial",
+      "highlight": false
+    },
+    {
+      "title": "Business",
+      "price": "$25",
+      "period": "/month",
+      "description": "For professionals and growing teams.",
+      "features": [
+        "Unlimited chatbot interactions",
+        "Omni-channel support",
+        "AI-powered lead generation & automation",
+        "Team collaboration & multi-agent support",
+        "Priority AI response speed",
+        "API access for custom integrations",
+        "Dedicated account manager",
+        "10 AI bot instances"
+      ],
+      "button": "Try 7-Days Free Trial",
+      "highlight": true,
+      "badge": "Recommended Price"
+    },
+    {
+      "title": "Business",
+      "price": "$45",
+      "period": "/month",
+      "description": "For businesses ready to scale.",
+      "features": [
+        "Unlimited chatbot interactions",
+        "Omni-channel support",
+        "AI-powered lead generation & automation",
+        "Team collaboration & multi-agent support",
+        "Priority AI response speed",
+        "API access for custom integrations",
+        "Dedicated account manager",
+        "10 AI bot instances"
+      ],
+      "button": "Try 7-Days Free Trial",
+      "highlight": false
+    }
+  ]
+}
+
