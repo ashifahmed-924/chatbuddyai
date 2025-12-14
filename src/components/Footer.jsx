@@ -7,8 +7,6 @@ import { FaXTwitter, FaLinkedin, FaYoutube, FaTiktok } from "react-icons/fa6";
 import { IoLogoFacebook } from "react-icons/io5";
 import { RiInstagramFill } from "react-icons/ri";
 
-import footerConfig from "../config/footer.json";
-
 // Map JSON string -> actual React Icon component
 const iconMap = {
   FaXTwitter,
@@ -19,6 +17,29 @@ const iconMap = {
   FaLinkedin,
 };
 
+// Footer component data
+const footerConfig = {
+  logo: {
+    alt: "ChatBuddy Logo"
+  },
+  brandName: "Chat Buddy",
+  newsletter: {
+    title: "Stay updated with our latest",
+    subtitle: "news and tips!",
+    placeholder: "Enter your email",
+    button: "Subscribe"
+  },
+  copyright: "© {year} ChatBuddy AI. All rights reserved.",
+  socialLinks: [
+    { icon: "FaXTwitter", name: "Twitter", href: "#" },
+    { icon: "FaTiktok", name: "TikTok", href: "#" },
+    { icon: "FaYoutube", name: "YouTube", href: "#" },
+    { icon: "RiInstagramFill", name: "Instagram", href: "#" },
+    { icon: "IoLogoFacebook", name: "Facebook", href: "#" },
+    { icon: "FaLinkedin", name: "LinkedIn", href: "#" }
+  ]
+};
+
 export default function Footer() {
   const { logo, brandName, newsletter, copyright, socialLinks } = footerConfig;
   const year = new Date().getFullYear();
@@ -27,7 +48,7 @@ export default function Footer() {
   return (
     <footer className="bg-black py-8 sm:py-10 px-4 md:px-8 lg:px-20">
       {/* Main Content */}
-      <div className="max-w-[60rem] mx-auto pb-8 sm:pb-10 px-4 sm:px-6">
+      <div className="max-w-[60rem] mx-auto lg:mx-0 pb-8 sm:pb-10 px-4 sm:px-6">
         <div className="flex flex-col items-center justify-center md:flex-row md:justify-between md:items-start">
           {/* Logo */}
           <div className="flex items-center gap-2 sm:gap-3 mb-8 md:mb-0 mr-auto md:mr-0">
@@ -63,7 +84,7 @@ export default function Footer() {
       </div>
 
       {/* Bottom Section */}
-      <div className="max-w-[60rem] mx-auto pt-4 border-t border-customGray flex flex-col items-start md:flex-row md:justify-between md:items-center px-4 sm:px-6">
+      <div className="max-w-[60rem] mx-auto lg:mx-0 pt-4 border-t border-customGray flex flex-col items-start md:flex-row md:justify-between md:items-center px-4 sm:px-6">
         {/* Copyright */}
         <p className="text-secondary text-xs pt-1 order-1 md:order-1 mb-3 md:mb-0">
           {resolvedCopyright}

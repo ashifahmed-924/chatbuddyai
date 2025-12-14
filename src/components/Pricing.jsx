@@ -1,122 +1,204 @@
-import { FaCheck } from "react-icons/fa";
-import pricingConfig from "../config/pricing.json";
+import { Check, ChevronLeft, ChevronRight } from "react-feather";
+
+import { useState, useEffect } from "react";
 
 export default function Pricing() {
-  const { title, description, annualDiscount, plans } = pricingConfig;
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [slidesToShow, setSlidesToShow] = useState(1);
+  const [isDesktop, setIsDesktop] = useState(false);
+  const [isMobileLandscape, setIsMobileLandscape] = useState(false);
+
+  const plans = [
+    {
+      title: "Starter",
+      price: "Free",
+      description: "Perfect for individuals getting started.",
+      bgClass: "bg-pricing-bg-2",
+      textClass: "text-black",
+      lineColor: "border-gray-200",
+      features: [
+        "Basic AI chatbot functionality",
+        "50 chatbot interactions",
+        "Limited integrations (Website & Messenger)",
+        "Pre-set chatbot templates",
+        "Basic analytics dashboard",
+        "Standard response speed",
+        "Community support",
+        "1 AI bot instance",
+      ],
+    },
+    {
+      title: "Business",
+      price: "$25",
+      description: "For professionals and growing teams.",
+      bgClass: "bg-pricing-bg",
+      textClass: "text-white",
+      lineColor: "border-white",
+      recommended: true,
+      features: [
+        "Unlimited chatbot interactions",
+        "Omni-channel support",
+        "AI-powered lead generation & automation",
+        "Team collaboration & multi-agent support",
+        "Priority AI response speed",
+        "API access for custom integrations",
+        "Dedicated account manager",
+        "10 AI bot instances",
+      ],
+    },
+    {
+      title: "Enterprise",
+      price: "$45",
+      description: "For large organizations with advanced needs.",
+      bgClass: "bg-pricing-bg-2",
+      textClass: "text-black",
+      lineColor: "border-gray-200",
+      features: [
+        "Unlimited chatbot interactions",
+        "Omni-channel support",
+        "AI-powered lead generation & automation",
+        "Team collaboration & multi-agent support",
+        "Priority AI response speed",
+        "API access for custom integrations",
+        "Dedicated account manager",
+        "10 AI bot instances",
+      ],
+    },
+  ];
+
+  useEffect(() => {
+    const handleResize = () => {
+      const width = window.innerWidth;
+      const height = window.innerHeight;
+
+      const mobileLandscape = width >= 640 && width < 768 && height < width;
+
+      setIsDesktop(width >= 1024);
+      setIsMobileLandscape(mobileLandscape);
+
+      if (width >= 1024) setSlidesToShow(plans.length);
+      else if (width >= 768 || mobileLandscape) setSlidesToShow(2);
+      else setSlidesToShow(1);
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + slidesToShow) % plans.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide(
+      (prev) => (prev - slidesToShow + plans.length) % plans.length
+    );
+  };
+
+  const visibleSlides = isDesktop
+    ? plans
+    : Array.from({ length: slidesToShow }, (_, i) =>
+        plans[(currentSlide + i) % plans.length]
+      );
 
   return (
-    <section className="w-full bg-white">
-      <div className="mx-auto max-w-desktop px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-2">
-        {/* Heading container */}
-        <div className="mx-auto w-full max-w-[878px] text-center mb-8 sm:mb-12 space-y-2">
-          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-gray-900">
-            {title.text}{" "}
-            <span className="text-primary">{title.highlight}</span>{" "}
-            {title.subtext}
-          </h2>
-          <p className="text-gray-500 text-xs sm:text-sm md:text-base px-4">
-            {description}
-          </p>
-          <div className="flex items-center justify-center gap-2 pt-2">
-            <span className="text-gray-800 font-medium text-xs sm:text-sm">
-              {annualDiscount.text}
-            </span>
-            <label className="relative inline-flex items-center cursor-pointer">
-              <input type="checkbox" defaultChecked className="sr-only peer" />
-              <div className="w-9 h-5 sm:w-11 sm:h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-blue-300 rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 sm:after:h-5 sm:after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
-            </label>
-          </div>
-        </div>
+    <section className="w-full py-20 bg-white" id="pricing">
+      {/* Header */}
+      <div className="text-center max-w-3xl mx-auto px-4">
+        <h2 className="text-2xl md:text-3xl font-semibold max-w-[22rem] mx-auto pb-2">
+          Flexible <span className="text-primary">Pricing</span> for Every Need!
+        </h2>
 
-        {/* Cards container */}
-        <div className="mx-auto w-full max-w-[1136px] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-10">
-          {plans.map((plan, index) => (
+        <p className="text-secondary text-sm mt-2">
+          Choose the perfect plan for your needs—no hidden fees, just powerful AI
+          at your fingertips!
+        </p>
+      </div>
+
+      {/* Pricing Cards */}
+      <div className="mt-16 relative max-w-6xl mx-auto flex items-center">
+        {!isDesktop && (
+          <button
+            onClick={prevSlide}
+            className="absolute left-0 top-1/2 -translate-y-1/2 bg-white shadow rounded-full p-2 z-10"
+          >
+            <ChevronLeft />
+          </button>
+        )}
+
+        <div
+          className={`w-full px-4 gap-6 ${
+            isDesktop
+              ? "grid grid-cols-3"
+              : "flex overflow-hidden justify-center"
+          }`}
+        >
+          {visibleSlides.map((plan, idx) => (
             <div
-              key={index}
-              className={`flex flex-col justify-between rounded-2xl shadow-sm border ${
-                plan.highlight
-                  ? "bg-pricing-dark text-white border-transparent"
-                  : "bg-[#F9FAFB] text-gray-900 border-gray-100"
-              } p-6 sm:p-8 w-full h-full`}
+              key={idx}
+              className={`rounded-xl p-6 shadow-sm hover:shadow-md transition flex flex-col
+                ${plan.bgClass} ${plan.textClass}
+                ${
+                  !isDesktop
+                    ? slidesToShow === 2
+                      ? "min-w-[45%]"
+                      : "min-w-[85%]"
+                    : ""
+                }
+              `}
+              style={plan.recommended ? {
+                background: "linear-gradient(207deg, #374151 -26.7%, #121928 113.45%)"
+              } : {}}
             >
-              {/* Top */}
-              <div>
-                <div className="flex items-center justify-between">
-                  <h3
-                    className={`text-base sm:text-lg font-semibold ${
-                      plan.highlight ? "text-white" : "text-gray-900"
-                    }`}
-                  >
-                    {plan.title}
-                  </h3>
-                  {plan.highlight && plan.badge && (
-                    <span className="text-xs font-semibold bg-blue-500 text-white rounded-full px-2 sm:px-3 py-1">
-                      {plan.badge}
-                    </span>
-                  )}
-                </div>
-
-                <h2
-                  className={`text-3xl sm:text-4xl font-bold mt-3 ${
-                    plan.highlight ? "text-white" : "text-gray-900"
-                  }`}
-                >
-                  {plan.price}
-                  {plan.period && (
-                    <span
-                      className={`text-sm sm:text-base font-medium ${
-                        plan.highlight ? "text-gray-300" : "text-gray-500"
-                      }`}
-                    >
-                      {" "}
-                      {plan.period}
-                    </span>
-                  )}
-                </h2>
-                <p
-                  className={`mt-2 text-xs sm:text-sm ${
-                    plan.highlight ? "text-gray-300" : "text-gray-500"
-                  }`}
-                >
-                  {plan.description}
-                </p>
-
-                {/* Features */}
-                <ul className="mt-4 sm:mt-5 space-y-2 text-xs sm:text-sm">
-                  {plan.features.map((feature, i) => (
-                    <li key={i} className="flex items-start gap-2 sm:gap-3">
-                      <FaCheck
-                        color="#00B67A"
-                        size={14}
-                        className="mt-1 flex-shrink-0"
-                      />
-                      <span
-                        className={`leading-relaxed ${
-                          plan.highlight ? "text-gray-300" : "text-gray-600"
-                        }`}
-                      >
-                        {feature}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
+              <div className="flex justify-between items-center mb-2">
+                <h3 className="text-sm font-semibold underline">
+                  {plan.title}
+                </h3>
+                {plan.recommended && (
+                  <span className="text-xs bg-primary px-3 py-1 rounded-full text-white">
+                    Recommended
+                  </span>
+                )}
               </div>
 
-              {/* Button */}
-              <div className="pt-4 sm:pt-6">
-                <button
-                  className={`w-full rounded-full text-xs sm:text-sm font-medium px-4 sm:px-5 py-2 sm:py-3 ${
-                    plan.highlight
-                      ? "bg-white text-pricing-dark hover:bg-gray-100"
-                      : "bg-pricing-blue text-white hover:bg-pricing-blue-dark"
-                  } transition`}
-                >
-                  {plan.button}
-                </button>
+              <div className="mt-2 flex items-baseline gap-2">
+                <span className="text-3xl font-bold">
+                  {plan.price === "Free" ? "Free" : plan.price}
+                </span>
+                {plan.price !== "Free" && (
+                  <span className="text-gray-400">/month</span>
+                )}
               </div>
+
+              <div className={`w-full mt-2 border-b-2 border-dotted ${plan.lineColor}`} />
+
+              <p className="text-sm mt-3">{plan.description}</p>
+
+              <ul className="mt-5 space-y-2 text-xs">
+                {plan.features.map((feature, i) => (
+                  <li key={i} className="flex gap-2">
+                    <Check size={16} className="text-green-600" />
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+
+              <button className="w-full mt-auto py-2 bg-primary text-white rounded-full font-medium hover:opacity-90 transition">
+                Try 7-Days Free Trial
+              </button>
             </div>
           ))}
         </div>
+
+        {!isDesktop && (
+          <button
+            onClick={nextSlide}
+            className="absolute right-0 top-1/2 -translate-y-1/2 bg-white shadow rounded-full p-2 z-10"
+          >
+            <ChevronRight />
+          </button>
+        )}
       </div>
     </section>
   );

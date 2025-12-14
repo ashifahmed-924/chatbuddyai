@@ -1,6 +1,5 @@
 import { MdOutlineBusinessCenter } from "react-icons/md";
 import { RiCustomerService2Line, RiShoppingCartLine, RiHospitalLine, RiHealthBookLine, RiCodeAiFill } from "react-icons/ri";
-import benefitsConfig from "../config/benefits.json";
 
 const iconMap = {
   MdOutlineBusinessCenter,
@@ -9,6 +8,47 @@ const iconMap = {
   RiHospitalLine,
   RiHealthBookLine,
   RiCodeAiFill,
+};
+
+// Benefits component data
+const benefitsConfig = {
+  title: {
+    text: "Who Can",
+    highlight: "Benefit?",
+    highlightColor: "primary"
+  },
+  items: [
+    {
+      icon: "MdOutlineBusinessCenter",
+      title: "Business Owners",
+      description: "Automate customer interactions & boost efficiency."
+    },
+    {
+      icon: "RiCustomerService2Line",
+      title: "Customer Support Teams",
+      description: "Provide instant, AI-driven responses."
+    },
+    {
+      icon: "RiShoppingCartLine",
+      title: "E-commerce Brands",
+      description: "Drive sales with AI-powered shopping assistance."
+    },
+    {
+      icon: "RiHospitalLine",
+      title: "Healthcare Providers",
+      description: "AI for appointment scheduling & patient inquiries."
+    },
+    {
+      icon: "RiHealthBookLine",
+      title: "Educators & Coaches",
+      description: "AI tutors & virtual assistants for students."
+    },
+    {
+      icon: "RiCodeAiFill",
+      title: "Intelligent code advisor",
+      description: "Provides code optimization suggestions based on project context."
+    }
+  ]
 };
 
 export default function Benifits() {

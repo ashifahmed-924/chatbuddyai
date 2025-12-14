@@ -2,7 +2,6 @@ import { useState } from "react";
 import { RiImageAiLine, RiChatVoiceAiFill, RiSearchEyeLine } from "react-icons/ri";
 import { LuPencilLine } from "react-icons/lu";
 import { CgFileDocument } from "react-icons/cg";
-import featuresConfig from "../config/features.json";
 import aiWriterImg from "../assets/Aiwriter.png";
 
 const iconMap = {
@@ -11,6 +10,55 @@ const iconMap = {
   CgFileDocument,
   RiSearchEyeLine,
   RiImageAiLine,
+};
+
+// Feature component data
+const featuresConfig = {
+  title: {
+    mobile: [
+      "Your All-in-One",
+      "AI-Powered",
+      "Assistant for Instant Support,",
+      "Productivity & Automation!"
+    ],
+    desktop: {
+      line1: "Your All-in-One",
+      line2: "AI-Powered Assistant",
+      line3: "for Instant Support,",
+      line4: "Productivity & Automation!"
+    }
+  },
+  subtitle: "Chat with all of the best models in one place.",
+  features: [
+    {
+      icon: "RiChatVoiceAiFill",
+      label: "AI chat"
+    },
+    {
+      icon: "LuPencilLine",
+      label: "AI writer"
+    },
+    {
+      icon: "CgFileDocument",
+      label: "AI summary"
+    },
+    {
+      icon: "RiSearchEyeLine",
+      label: "AI search"
+    },
+    {
+      icon: "CgFileDocument",
+      label: "AI translator"
+    },
+    {
+      icon: "RiImageAiLine",
+      label: "AI art creator"
+    }
+  ],
+  featureImage: {
+    src: "../assets/Aiwriter.png",
+    alt: "AI writer preview"
+  }
 };
 
 export default function Feature() {
@@ -42,7 +90,20 @@ export default function Feature() {
 
         {/* Feature chips */}
         <div className="w-full flex justify-center mt-4 sm:mt-6 md:mt-8 lg:mt-10">
-          <ul className="inline-flex flex-wrap md:flex-nowrap items-center justify-center gap-x-6 sm:gap-x-8 md:gap-x-4 gap-y-3 text-sm md:text-base">
+          <ul
+            className="
+              inline-flex flex-wrap items-center justify-center
+              gap-x-6 sm:gap-x-8 gap-y-3
+              text-sm md:text-base
+
+              md:grid md:grid-cols-3 md:gap-x-8 md:gap-y-6
+              md:place-items-center
+              md:w-full md:max-w-[820px]
+              
+              lg:flex lg:flex-row lg:flex-nowrap lg:gap-x-6 lg:gap-y-0
+              lg:max-w-none lg:w-auto
+            "
+          >
             {features.map((feature, index) => {
               const Icon = iconMap[feature.icon];
               const isActive = hoveredIndex === index || (hoveredIndex === null && index === 0);
@@ -52,7 +113,11 @@ export default function Feature() {
               return (
                 <li
                   key={feature.label}
-                  className="inline-flex items-center gap-2 bg-white px-3 py-1.5 cursor-pointer transition-colors"
+                  className="
+                    inline-flex items-center gap-2 bg-white px-3 py-1.5
+                    cursor-pointer transition-colors
+                    md:justify-center
+                  "
                   onMouseEnter={() => setHoveredIndex(index)}
                   onMouseLeave={() => setHoveredIndex(0)}
                 >

@@ -1,8 +1,26 @@
 import { useState } from "react";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { IoClose } from "react-icons/io5";
-import navigationConfig from "../config/navigation.json";
 import Logo from "../assets/Logo.png";
+
+// Navbar component data
+const navigationConfig = {
+  logo: {
+    src: "../assets/Logo.png",
+    alt: "ChatBuddy Logo"
+  },
+  menuItems: [
+    { label: "Features", href: "#features" },
+    { label: "How It Works", href: "#how-it-works" },
+    { label: "Pricing", href: "#pricing" },
+    { label: "Testimonials", href: "#testimonials" },
+    { label: "FAQ", href: "#faq" }
+  ],
+  ctaButton: {
+    text: "Try 7-Days Free Trial",
+    href: "#"
+  }
+};
 
 export default function Navbar() {
   const { logo, menuItems, ctaButton } = navigationConfig;

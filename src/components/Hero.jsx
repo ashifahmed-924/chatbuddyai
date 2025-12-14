@@ -1,9 +1,38 @@
 import { FaStar } from "react-icons/fa";
-import heroConfig from "../config/hero.json";
-import commonConfig from "../config/common.json";
+import { commonConfig } from "../utils/constants";
 import google from "../assets/google.png";
 import google2 from "../assets/google_2.png";
 import HeroImage from "../assets/Hero_image.png";
+
+// Hero component data
+const heroConfig = {
+  title: {
+    text: "Transform Your Conversations with Smart",
+    highlight: "AI Chatbots!",
+    highlightColor: "primary"
+  },
+  description: "Discover the power of ChatBuddy AI - your ultimate personal AI companion designed to enhance communication and supercharge your productivity.",
+  ctaButton: {
+    text: "Try 7-Days Free Trial",
+    href: "#"
+  },
+  ratings: [
+    {
+      icon: "../assets/google.png",
+      rating: "4.9 / 5.0",
+      source: "On Chrome Store"
+    },
+    {
+      icon: "../assets/google_2.png",
+      rating: "4.9 / 5.0",
+      source: "On Chrome Store"
+    }
+  ],
+  heroImage: {
+    src: "../assets/Hero_image.png",
+    alt: "App Demo"
+  }
+};
 
 const Hero = () => {
   const { title, description, ctaButton, ratings, heroImage } = heroConfig;
@@ -49,18 +78,18 @@ const Hero = () => {
                   className="w-6 h-6 sm:w-7 sm:h-7 object-contain"
                   alt={rating.source}
                 />
-              </div>
+            </div>
               <div className="text-xs sm:text-sm">
                 <p className="font-semibold text-gray-900 flex items-center gap-1 sm:gap-2">
                   {rating.rating}{" "}
-                  <span className="inline-flex items-center gap-0.5">
+                <span className="inline-flex items-center gap-0.5">
                     {Array.from({ length: starCount }).map((_, i) => (
                       <StarIcon key={i} />
                     ))}
-                  </span>
-                </p>
+                </span>
+              </p>
                 <p className="text-gray-500">{rating.source}</p>
-              </div>
+          </div>
             </div>
           ))}
         </div>

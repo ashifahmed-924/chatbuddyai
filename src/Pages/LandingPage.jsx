@@ -6,7 +6,8 @@ import Feature2 from "../components/Feature2";
 import Benefits from "../components/Benifits";
 import Testimonials from "../components/Testimonials";
 import Pricing from "../components/Pricing";
-import FAQCTA from "../components/FAQ&CTA";
+import FAQ from "../components/FAQ";
+import CTA from "../components/CTA";
 import Footer from "../components/Footer";
 
 export default function LandingPage() {
@@ -45,9 +46,14 @@ export default function LandingPage() {
         <Pricing />
       </section>
 
-      {/* FAQ & CTA Section */}
+      {/* FAQ Section */}
       <section id="faq" className="mt-8 sm:mt-12 lg:mt-16">
-        <FAQCTA />
+        <FAQ />
+      </section>
+
+      {/* CTA Section */}
+      <section className="mt-8 sm:mt-12 lg:mt-16">
+        <CTA />
       </section>
 
       {/* Footer */}

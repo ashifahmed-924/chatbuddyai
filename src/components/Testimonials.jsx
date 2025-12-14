@@ -1,6 +1,5 @@
 import { FaStar } from "react-icons/fa";
-import testimonialsConfig from "../config/testimonials.json";
-import commonConfig from "../config/common.json";
+import { commonConfig } from "../utils/constants";
 import google from "../assets/google.png";
 import google2 from "../assets/google_2.png";
 import DP1 from "../assets/DP1.png";
@@ -9,6 +8,58 @@ import DP3 from "../assets/DP3.png";
 import DP4 from "../assets/DP4.png";
 import DP5 from "../assets/DP5.png";
 import DP6 from "../assets/DP6.png";
+
+// Testimonials component data
+const testimonialsConfig = {
+  title: {
+    text: "See What Our",
+    highlight: "Users Are Saying!"
+  },
+  ratings: [
+    {
+      icon: "../assets/google.png",
+      rating: "4.9 / 5.0",
+      source: "On Chrome Store"
+    },
+    {
+      icon: "../assets/google_2.png",
+      rating: "4.9 / 5.0",
+      source: "On Chrome Store"
+    }
+  ],
+  testimonials: [
+    {
+      name: "Hianto Mateus",
+      image: "../assets/DP1.png",
+      text: "The improvement in my productivity, I won't even comment on. The 5 stars are enough <3. Thank you for existing!"
+    },
+    {
+      name: "Sarah L.",
+      image: "../assets/DP2.png",
+      text: "Incredible AI assistant! It has completely transformed the way we handle customer support—faster responses and happier clients!"
+    },
+    {
+      name: "James M.",
+      image: "../assets/DP3.png",
+      text: "The improvement in my productivity, I won't even comment on. The 5 stars are enough <3. Thank you for existing!"
+    },
+    {
+      name: "Daniel R.",
+      image: "../assets/DP4.png",
+      text: "The best AI chatbot I've used! It feels natural, adapts quickly, and integrates seamlessly with my platforms."
+    },
+    {
+      name: "Emily T.",
+      image: "../assets/DP5.png",
+      text: "A game-changer for my team! We've improved efficiency and customer engagement like never before."
+    },
+    {
+      name: "Amanda P.",
+      image: "../assets/DP6.png",
+      text: "I was skeptical at first, but now I can't imagine working without it. 24/7 AI support has been a lifesaver!"
+    }
+  ]
+};
 
 export default function Testimonials() {
   const { title, ratings, testimonials } = testimonialsConfig;
