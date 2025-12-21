@@ -1,11 +1,9 @@
 import React from "react";
-
-// Your logo file (keep the actual filename that exists in /src/assets)
 import OnlyLogo from "../assets/onlylogo.png";
-
 import { FaXTwitter, FaLinkedin, FaYoutube, FaTiktok } from "react-icons/fa6";
 import { IoLogoFacebook } from "react-icons/io5";
 import { RiInstagramFill } from "react-icons/ri";
+import footerConfig from "../content/footer.json";
 
 // Map JSON string -> actual React Icon component
 const iconMap = {
@@ -15,29 +13,6 @@ const iconMap = {
   RiInstagramFill,
   IoLogoFacebook,
   FaLinkedin,
-};
-
-// Footer component data
-const footerConfig = {
-  logo: {
-    alt: "ChatBuddy Logo"
-  },
-  brandName: "Chat Buddy",
-  newsletter: {
-    title: "Stay updated with our latest",
-    subtitle: "news and tips!",
-    placeholder: "Enter your email",
-    button: "Subscribe"
-  },
-  copyright: "© {year} ChatBuddy AI. All rights reserved.",
-  socialLinks: [
-    { icon: "FaXTwitter", name: "Twitter", href: "#" },
-    { icon: "FaTiktok", name: "TikTok", href: "#" },
-    { icon: "FaYoutube", name: "YouTube", href: "#" },
-    { icon: "RiInstagramFill", name: "Instagram", href: "#" },
-    { icon: "IoLogoFacebook", name: "Facebook", href: "#" },
-    { icon: "FaLinkedin", name: "LinkedIn", href: "#" }
-  ]
 };
 
 export default function Footer() {

@@ -1,0 +1,73 @@
+{
+  "title": {
+    "text": "Flexible",
+    "highlight": "Pricing",
+    "suffix": "for Every Need!"
+  },
+  "subtitle": "Choose the perfect plan for your needs—no hidden fees, just powerful AI at your fingertips!",
+  "discount": {
+    "text": "41% Annual Discount",
+    "switchButton": "/assets/switchbutton.svg"
+  },
+  "plans": [
+    {
+      "title": "Starter",
+      "price": "Free",
+      "description": "Perfect for individuals getting started.",
+      "bgClass": "bg-pricing-bg-2",
+      "textClass": "text-black",
+      "lineColor": "border-gray-200",
+      "features": [
+        "Basic AI chatbot functionality",
+        "50 chatbot interactions",
+        "Limited integrations (Website & Messenger)",
+        "Pre-set chatbot templates",
+        "Basic analytics dashboard",
+        "Standard response speed",
+        "Community support",
+        "1 AI bot instance"
+      ]
+    },
+    {
+      "title": "Business",
+      "price": "$25",
+      "description": "For professionals and growing teams.",
+      "bgClass": "bg-pricing-bg",
+      "textClass": "text-white",
+      "lineColor": "border-white",
+      "recommended": true,
+      "features": [
+        "Unlimited chatbot interactions",
+        "Omni-channel support",
+        "AI-powered lead generation & automation",
+        "Team collaboration & multi-agent support",
+        "Priority AI response speed",
+        "API access for custom integrations",
+        "Dedicated account manager",
+        "10 AI bot instances"
+      ]
+    },
+    {
+      "title": "Enterprise",
+      "price": "$45",
+      "description": "For large organizations with advanced needs.",
+      "bgClass": "bg-pricing-bg-2",
+      "textClass": "text-black",
+      "lineColor": "border-gray-200",
+      "features": [
+        "Unlimited chatbot interactions",
+        "Omni-channel support",
+        "AI-powered lead generation & automation",
+        "Team collaboration & multi-agent support",
+        "Priority AI response speed",
+        "API access for custom integrations",
+        "Dedicated account manager",
+        "10 AI bot instances"
+      ]
+    }
+  ],
+  "ctaButton": {
+    "text": "Try 7-Days Free Trial"
+  }
+}
+

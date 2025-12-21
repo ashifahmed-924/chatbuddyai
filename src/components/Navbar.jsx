@@ -2,25 +2,7 @@ import { useState } from "react";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { IoClose } from "react-icons/io5";
 import Logo from "../assets/Logo.png";
-
-// Navbar component data
-const navigationConfig = {
-  logo: {
-    src: "../assets/Logo.png",
-    alt: "ChatBuddy Logo"
-  },
-  menuItems: [
-    { label: "Features", href: "#features" },
-    { label: "How It Works", href: "#how-it-works" },
-    { label: "Pricing", href: "#pricing" },
-    { label: "Testimonials", href: "#testimonials" },
-    { label: "FAQ", href: "#faq" }
-  ],
-  ctaButton: {
-    text: "Try 7-Days Free Trial",
-    href: "#"
-  }
-};
+import navigationConfig from "../content/navbar.json";
 
 export default function Navbar() {
   const { logo, menuItems, ctaButton } = navigationConfig;
@@ -44,7 +26,7 @@ export default function Navbar() {
             {menuItems.map((item, index) => (
               <li
                 key={index}
-                className="text-primary cursor-pointer hover:text-primary-dark transition-colors"
+                className="text-primary cursor-pointer hover:text-black transition-colors"
               >
                 <a href={item.href}>{item.label}</a>
               </li>

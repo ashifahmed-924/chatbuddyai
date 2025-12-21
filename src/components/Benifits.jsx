@@ -1,5 +1,6 @@
 import { MdOutlineBusinessCenter } from "react-icons/md";
 import { RiCustomerService2Line, RiShoppingCartLine, RiHospitalLine, RiHealthBookLine, RiCodeAiFill } from "react-icons/ri";
+import benefitsConfig from "../content/benefits.json";
 
 const iconMap = {
   MdOutlineBusinessCenter,
@@ -10,53 +11,12 @@ const iconMap = {
   RiCodeAiFill,
 };
 
-// Benefits component data
-const benefitsConfig = {
-  title: {
-    text: "Who Can",
-    highlight: "Benefit?",
-    highlightColor: "primary"
-  },
-  items: [
-    {
-      icon: "MdOutlineBusinessCenter",
-      title: "Business Owners",
-      description: "Automate customer interactions & boost efficiency."
-    },
-    {
-      icon: "RiCustomerService2Line",
-      title: "Customer Support Teams",
-      description: "Provide instant, AI-driven responses."
-    },
-    {
-      icon: "RiShoppingCartLine",
-      title: "E-commerce Brands",
-      description: "Drive sales with AI-powered shopping assistance."
-    },
-    {
-      icon: "RiHospitalLine",
-      title: "Healthcare Providers",
-      description: "AI for appointment scheduling & patient inquiries."
-    },
-    {
-      icon: "RiHealthBookLine",
-      title: "Educators & Coaches",
-      description: "AI tutors & virtual assistants for students."
-    },
-    {
-      icon: "RiCodeAiFill",
-      title: "Intelligent code advisor",
-      description: "Provides code optimization suggestions based on project context."
-    }
-  ]
-};
-
 export default function Benifits() {
   const { title, items } = benefitsConfig;
 
   return (
     <section className="w-full bg-white mb-8 sm:mb-12 lg:mb-16">
-      <div className="mx-auto max-w-desktop px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-2">
+      <div className="mx-auto max-w-desktop px-4 sm:px-6 lg:px-8 pt-2 pb-8 sm:pt-3 sm:pb-12 lg:pt-0 lg:pb-2">
         <div className="mx-auto w-full max-w-[867px] flex flex-col items-center text-center gap-6 sm:gap-8 md:gap-10 lg:gap-6">
           {/* Heading */}
           <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-3xl font-semibold text-gray-900">

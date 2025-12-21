@@ -1,0 +1,51 @@
+{
+  "title": {
+    "text": "See What Our",
+    "highlight": "Users Are Saying!"
+  },
+  "ratings": [
+    {
+      "icon": "/assets/google.png",
+      "rating": "4.9 / 5.0",
+      "source": "On Chrome Store"
+    },
+    {
+      "icon": "/assets/google_2.png",
+      "rating": "4.9 / 5.0",
+      "source": "On Chrome Store"
+    }
+  ],
+  "testimonials": [
+    {
+      "name": "Hianto Mateus",
+      "image": "/assets/DP1.png",
+      "text": "The improvement in my productivity, I won't even comment on. The 5 stars are enough <3. Thank you for existing!"
+    },
+    {
+      "name": "Sarah L.",
+      "image": "/assets/DP2.png",
+      "text": "Incredible AI assistant! It has completely transformed the way we handle customer support—faster responses and happier clients!"
+    },
+    {
+      "name": "James M.",
+      "image": "/assets/DP3.png",
+      "text": "The improvement in my productivity, I won't even comment on. The 5 stars are enough <3. Thank you for existing!"
+    },
+    {
+      "name": "Daniel R.",
+      "image": "/assets/DP4.png",
+      "text": "The best AI chatbot I've used! It feels natural, adapts quickly, and integrates seamlessly with my platforms."
+    },
+    {
+      "name": "Emily T.",
+      "image": "/assets/DP5.png",
+      "text": "A game-changer for my team! We've improved efficiency and customer engagement like never before."
+    },
+    {
+      "name": "Amanda P.",
+      "image": "/assets/DP6.png",
+      "text": "I was skeptical at first, but now I can't imagine working without it. 24/7 AI support has been a lifesaver!"
+    }
+  ]
+}
+

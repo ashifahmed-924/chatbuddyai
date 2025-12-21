@@ -1,6 +1,7 @@
 import { Check, ChevronLeft, ChevronRight } from "react-feather";
-
 import { useState, useEffect } from "react";
+import switchbutton from "../assets/switchbutton.svg";
+import pricingConfig from "../content/pricing.json";
 
 export default function Pricing() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -8,69 +9,12 @@ export default function Pricing() {
   const [isDesktop, setIsDesktop] = useState(false);
   const [isMobileLandscape, setIsMobileLandscape] = useState(false);
 
-  const plans = [
-    {
-      title: "Starter",
-      price: "Free",
-      description: "Perfect for individuals getting started.",
-      bgClass: "bg-pricing-bg-2",
-      textClass: "text-black",
-      lineColor: "border-gray-200",
-      features: [
-        "Basic AI chatbot functionality",
-        "50 chatbot interactions",
-        "Limited integrations (Website & Messenger)",
-        "Pre-set chatbot templates",
-        "Basic analytics dashboard",
-        "Standard response speed",
-        "Community support",
-        "1 AI bot instance",
-      ],
-    },
-    {
-      title: "Business",
-      price: "$25",
-      description: "For professionals and growing teams.",
-      bgClass: "bg-pricing-bg",
-      textClass: "text-white",
-      lineColor: "border-white",
-      recommended: true,
-      features: [
-        "Unlimited chatbot interactions",
-        "Omni-channel support",
-        "AI-powered lead generation & automation",
-        "Team collaboration & multi-agent support",
-        "Priority AI response speed",
-        "API access for custom integrations",
-        "Dedicated account manager",
-        "10 AI bot instances",
-      ],
-    },
-    {
-      title: "Enterprise",
-      price: "$45",
-      description: "For large organizations with advanced needs.",
-      bgClass: "bg-pricing-bg-2",
-      textClass: "text-black",
-      lineColor: "border-gray-200",
-      features: [
-        "Unlimited chatbot interactions",
-        "Omni-channel support",
-        "AI-powered lead generation & automation",
-        "Team collaboration & multi-agent support",
-        "Priority AI response speed",
-        "API access for custom integrations",
-        "Dedicated account manager",
-        "10 AI bot instances",
-      ],
-    },
-  ];
+  const { title, subtitle, discount, plans, ctaButton } = pricingConfig;
 
   useEffect(() => {
     const handleResize = () => {
       const width = window.innerWidth;
       const height = window.innerHeight;
-
       const mobileLandscape = width >= 640 && width < 768 && height < width;
 
       setIsDesktop(width >= 1024);
@@ -103,17 +47,41 @@ export default function Pricing() {
       );
 
   return (
-    <section className="w-full py-20 bg-white" id="pricing">
+    <section className="w-full py-4 lg:py-6 bg-white" id="pricing">
       {/* Header */}
       <div className="text-center max-w-3xl mx-auto px-4">
         <h2 className="text-2xl md:text-3xl font-semibold max-w-[22rem] mx-auto pb-2">
-          Flexible <span className="text-primary">Pricing</span> for Every Need!
+          {title.text} <span className="text-primary">{title.highlight}</span> {title.suffix}
         </h2>
 
         <p className="text-secondary text-sm mt-2">
-          Choose the perfect plan for your needs—no hidden fees, just powerful AI
-          at your fingertips!
+          {subtitle}
         </p>
+
+        {/* ✅ Discount Row (TEXT FIRST, SVG AFTER — ONE ROW) */}
+        <div
+          className="mt-4 mx-auto flex items-center justify-center gap-3"
+          style={{ width: "187px", height: "24px" }}
+        >
+          <span
+            style={{
+              color: "#6B7280",
+              fontFamily: "Urbanist",
+              fontSize: "16.8px",
+              fontWeight: 700,
+              lineHeight: "23.52px",
+              whiteSpace: "nowrap",
+            }}
+          >
+            {discount.text}
+          </span>
+
+          <img
+            src={switchbutton}
+            alt="Switch button"
+            style={{ width: "49px", height: "24.5px" }}
+          />
+        </div>
       </div>
 
       {/* Pricing Cards */}
@@ -129,9 +97,7 @@ export default function Pricing() {
 
         <div
           className={`w-full px-4 gap-6 ${
-            isDesktop
-              ? "grid grid-cols-3"
-              : "flex overflow-hidden justify-center"
+            isDesktop ? "grid grid-cols-3" : "flex overflow-hidden justify-center"
           }`}
         >
           {visibleSlides.map((plan, idx) => (
@@ -147,14 +113,17 @@ export default function Pricing() {
                     : ""
                 }
               `}
-              style={plan.recommended ? {
-                background: "linear-gradient(207deg, #374151 -26.7%, #121928 113.45%)"
-              } : {}}
+              style={
+                plan.recommended
+                  ? {
+                      background:
+                        "linear-gradient(207deg, #374151 -26.7%, #121928 113.45%)",
+                    }
+                  : {}
+              }
             >
               <div className="flex justify-between items-center mb-2">
-                <h3 className="text-sm font-semibold underline">
-                  {plan.title}
-                </h3>
+                <h3 className="text-sm font-semibold underline">{plan.title}</h3>
                 {plan.recommended && (
                   <span className="text-xs bg-primary px-3 py-1 rounded-full text-white">
                     Recommended
@@ -171,7 +140,9 @@ export default function Pricing() {
                 )}
               </div>
 
-              <div className={`w-full mt-2 border-b-2 border-dotted ${plan.lineColor}`} />
+              <div
+                className={`w-full mt-2 border-b-2 border-dotted ${plan.lineColor}`}
+              />
 
               <p className="text-sm mt-3">{plan.description}</p>
 
@@ -185,7 +156,7 @@ export default function Pricing() {
               </ul>
 
               <button className="w-full mt-auto py-2 bg-primary text-white rounded-full font-medium hover:opacity-90 transition">
-                Try 7-Days Free Trial
+                {ctaButton.text}
               </button>
             </div>
           ))}

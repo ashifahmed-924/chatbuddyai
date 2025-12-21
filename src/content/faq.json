@@ -1,0 +1,30 @@
+{
+  "title": {
+    "text": "Frequently",
+    "highlight": "asked questions"
+  },
+  "description": "For any unanswered questions, reach out to our support team via contact us page or email. We'll respond with-in a day to assist you.",
+  "faqs": [
+    {
+      "q": "What is ChatBuddy AI, and how does it work?",
+      "a": "ChatBuddy AI is an all-in-one AI-powered assistant designed to automate conversations, provide instant responses, and enhance productivity. It integrates with various platforms like websites, social media, and messaging apps to streamline customer support and task management."
+    },
+    {
+      "q": "Can I try ChatBuddy AI for free?",
+      "a": "Yes! We offer a 7-day free trial for all new users."
+    },
+    {
+      "q": "What platforms does ChatBuddy AI support?",
+      "a": "ChatBuddy AI integrates with websites, social media, and major messaging apps."
+    },
+    {
+      "q": "Can I customize the AI assistant to match my brand?",
+      "a": "Absolutely, you can personalize colors, tone, and behavior."
+    },
+    {
+      "q": "How secure is my data with ChatBuddy AI?",
+      "a": "We use industry-standard encryption and never share your data."
+    }
+  ]
+}
+

@@ -3,36 +3,7 @@ import { commonConfig } from "../utils/constants";
 import google from "../assets/google.png";
 import google2 from "../assets/google_2.png";
 import HeroImage from "../assets/Hero_image.png";
-
-// Hero component data
-const heroConfig = {
-  title: {
-    text: "Transform Your Conversations with Smart",
-    highlight: "AI Chatbots!",
-    highlightColor: "primary"
-  },
-  description: "Discover the power of ChatBuddy AI - your ultimate personal AI companion designed to enhance communication and supercharge your productivity.",
-  ctaButton: {
-    text: "Try 7-Days Free Trial",
-    href: "#"
-  },
-  ratings: [
-    {
-      icon: "../assets/google.png",
-      rating: "4.9 / 5.0",
-      source: "On Chrome Store"
-    },
-    {
-      icon: "../assets/google_2.png",
-      rating: "4.9 / 5.0",
-      source: "On Chrome Store"
-    }
-  ],
-  heroImage: {
-    src: "../assets/Hero_image.png",
-    alt: "App Demo"
-  }
-};
+import heroConfig from "../content/hero.json";
 
 const Hero = () => {
   const { title, description, ctaButton, ratings, heroImage } = heroConfig;
@@ -40,9 +11,9 @@ const Hero = () => {
   const starColor = commonConfig.starRating.color;
 
   const imageMap = {
-    "../assets/google.png": google,
-    "../assets/google_2.png": google2,
-    "../assets/Hero_image.png": HeroImage,
+    "/assets/google.png": google,
+    "/assets/google_2.png": google2,
+    "/assets/Hero_image.png": HeroImage,
   };
 
   const StarIcon = () => (
@@ -108,3 +79,4 @@ const Hero = () => {
 };
 
 export default Hero;
+  

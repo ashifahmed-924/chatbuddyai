@@ -1,0 +1,23 @@
+{
+  "logo": {
+    "src": "/assets/onlylogo.png",
+    "alt": "ChatBuddy Logo"
+  },
+  "brandName": "Chat Buddy",
+  "newsletter": {
+    "title": "Stay updated with our latest",
+    "subtitle": "news and tips!",
+    "placeholder": "Enter your email",
+    "button": "Subscribe"
+  },
+  "copyright": "© {year} ChatBuddy AI. All rights reserved.",
+  "socialLinks": [
+    { "icon": "FaXTwitter", "name": "Twitter", "href": "#" },
+    { "icon": "FaTiktok", "name": "TikTok", "href": "#" },
+    { "icon": "FaYoutube", "name": "YouTube", "href": "#" },
+    { "icon": "RiInstagramFill", "name": "Instagram", "href": "#" },
+    { "icon": "IoLogoFacebook", "name": "Facebook", "href": "#" },
+    { "icon": "FaLinkedin", "name": "LinkedIn", "href": "#" }
+  ]
+}
+

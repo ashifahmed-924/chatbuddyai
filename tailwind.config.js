@@ -24,9 +24,9 @@ module.exports = {
       
       // Font Families
       fontFamily: {
-        inter: ['Inter', 'sans-serif'],
-        manrope: ['Manrope', 'sans-serif'],
-        urbanist: ['Urbanist', 'sans-serif'],
+        heading: ['Urbanist', 'sans-serif'],
+        body: ['Inter', 'sans-serif'],
+        urbanist: ['Urbanist', 'sans-serif'], // Keep for backward compatibility (used in components)
       },
       
       // Font Sizes
@@ -46,45 +46,29 @@ module.exports = {
       
       // Color Palette - All colors from components
       colors: {
-        // Primary Colors
+        // Named Color System (for structure and reuse)
         primary: '#4078BF',
+        secondary: '#545C66',
+        accent: '#00B69B',
+        background: '#F5F6FA',
+        surface: '#FFFFFF',
+        text: '#1F2937',
+        muted: '#6B7280',
+        border: '#E5E7EB',
+        
+        // Primary Colors (keeping existing for backward compatibility)
         'primary-dark': '#3467a6',
-        'primary-light': '#5b8bcaff',
         'bt-hover': '#5b8bcaff',
         
-        // Secondary Colors
-        secondary: '#545C66',
-        
-        // Background Colors
+        // Background Colors (used in components)
         'gradient': '#EEF7FF',
         'gradient-2': '#BCE3FF',
-        'bg-blue': '#D9E4F2',
-        'image-bg': '#D9E4F2',
-        'page-bg': '#F5F6FA',
-        'backgroundbox': 'rgba(84, 92, 102, 0.04)',
-        'backboxbackground': 'rgba(0, 0, 0, 0.03)',
-        'custom-bg-gray': '#2A3F58',
         'customGray': '#F8F6F5',
         'customBg': 'rgba(84, 92, 102, 0.04)',
         
-        // Accent Colors
-        'yellow-1': '#FBBC05',
-        'green-1': '#00B69B',
-        'green-check': '#00B67A',
-        'optional-1': '#5C7E8E',
-        'optional-2': '#85AAB9',
-        'primary-green': '#98C7D6',
-        'reviewbar-bg': '#F7EAE2',
-        'grey-1': '#959595',
-        'grey_button': '#EEEFEF',
-        
-        // Pricing Section Colors
-        'pricing-dark': '#121826',
-        'pricing-blue': '#2656FF',
-        'pricing-blue-dark': '#1f49d9',
-        
-        // Star Rating Color
-        'star-yellow': '#FFAB00',
+        // Pricing Section Colors (used in components)
+        'pricing-bg': '#121928',
+        'pricing-bg-2': '#FFFFFF',
       },
       
       // Box Shadows

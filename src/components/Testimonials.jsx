@@ -8,58 +8,7 @@ import DP3 from "../assets/DP3.png";
 import DP4 from "../assets/DP4.png";
 import DP5 from "../assets/DP5.png";
 import DP6 from "../assets/DP6.png";
-
-// Testimonials component data
-const testimonialsConfig = {
-  title: {
-    text: "See What Our",
-    highlight: "Users Are Saying!"
-  },
-  ratings: [
-    {
-      icon: "../assets/google.png",
-      rating: "4.9 / 5.0",
-      source: "On Chrome Store"
-    },
-    {
-      icon: "../assets/google_2.png",
-      rating: "4.9 / 5.0",
-      source: "On Chrome Store"
-    }
-  ],
-  testimonials: [
-    {
-      name: "Hianto Mateus",
-      image: "../assets/DP1.png",
-      text: "The improvement in my productivity, I won't even comment on. The 5 stars are enough <3. Thank you for existing!"
-    },
-    {
-      name: "Sarah L.",
-      image: "../assets/DP2.png",
-      text: "Incredible AI assistant! It has completely transformed the way we handle customer support—faster responses and happier clients!"
-    },
-    {
-      name: "James M.",
-      image: "../assets/DP3.png",
-      text: "The improvement in my productivity, I won't even comment on. The 5 stars are enough <3. Thank you for existing!"
-    },
-    {
-      name: "Daniel R.",
-      image: "../assets/DP4.png",
-      text: "The best AI chatbot I've used! It feels natural, adapts quickly, and integrates seamlessly with my platforms."
-    },
-    {
-      name: "Emily T.",
-      image: "../assets/DP5.png",
-      text: "A game-changer for my team! We've improved efficiency and customer engagement like never before."
-    },
-    {
-      name: "Amanda P.",
-      image: "../assets/DP6.png",
-      text: "I was skeptical at first, but now I can't imagine working without it. 24/7 AI support has been a lifesaver!"
-    }
-  ]
-};
+import testimonialsConfig from "../content/testimonials.json";
 
 export default function Testimonials() {
   const { title, ratings, testimonials } = testimonialsConfig;
@@ -67,14 +16,14 @@ export default function Testimonials() {
   const starColor = commonConfig.starRating.color;
 
   const imageMap = {
-    "../assets/google.png": google,
-    "../assets/google_2.png": google2,
-    "../assets/DP1.png": DP1,
-    "../assets/DP2.png": DP2,
-    "../assets/DP3.png": DP3,
-    "../assets/DP4.png": DP4,
-    "../assets/DP5.png": DP5,
-    "../assets/DP6.png": DP6,
+    "/assets/google.png": google,
+    "/assets/google_2.png": google2,
+    "/assets/DP1.png": DP1,
+    "/assets/DP2.png": DP2,
+    "/assets/DP3.png": DP3,
+    "/assets/DP4.png": DP4,
+    "/assets/DP5.png": DP5,
+    "/assets/DP6.png": DP6,
   };
 
   const StarIcon = () => <FaStar className="inline-block" color={starColor} />;

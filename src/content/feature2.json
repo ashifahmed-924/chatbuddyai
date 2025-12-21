@@ -1,0 +1,31 @@
+{
+  "title": {
+    "text": "Launch Your",
+    "highlight": "AI Assistant",
+    "suffix": "in Just 3 Simple Steps"
+  },
+  "steps": [
+    {
+      "stepNumber": "Step 1",
+      "title": "Sign Up & Set Up",
+      "description": "Create your account and personalize your AI assistant in just a few clicks.",
+      "image": "/assets/SignUp.png"
+    },
+    {
+      "stepNumber": "Step 2",
+      "title": "Train & Customize",
+      "description": "Train your AI with FAQs, workflows, and custom responses, tweaking its tone and style to match your brand or preferences effortlessly.",
+      "image": "/assets/SignUp_2.png"
+    },
+    {
+      "stepNumber": "Step 3",
+      "title": "Deploy & Automate",
+      "description": "Add ChatBuddy AI to your site, social media, or apps—it instantly answers queries, schedules tasks, boosts productivity, and works 24/7!",
+      "image": "/assets/Hero_image.png",
+      "ctaButton": {
+        "text": "Try 7-Days Free Trial"
+      }
+    }
+  ]
+}
+

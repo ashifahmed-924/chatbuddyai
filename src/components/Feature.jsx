@@ -3,6 +3,7 @@ import { RiImageAiLine, RiChatVoiceAiFill, RiSearchEyeLine } from "react-icons/r
 import { LuPencilLine } from "react-icons/lu";
 import { CgFileDocument } from "react-icons/cg";
 import aiWriterImg from "../assets/Aiwriter.png";
+import featuresConfig from "../content/feature.json";
 
 const iconMap = {
   RiChatVoiceAiFill,
@@ -10,55 +11,6 @@ const iconMap = {
   CgFileDocument,
   RiSearchEyeLine,
   RiImageAiLine,
-};
-
-// Feature component data
-const featuresConfig = {
-  title: {
-    mobile: [
-      "Your All-in-One",
-      "AI-Powered",
-      "Assistant for Instant Support,",
-      "Productivity & Automation!"
-    ],
-    desktop: {
-      line1: "Your All-in-One",
-      line2: "AI-Powered Assistant",
-      line3: "for Instant Support,",
-      line4: "Productivity & Automation!"
-    }
-  },
-  subtitle: "Chat with all of the best models in one place.",
-  features: [
-    {
-      icon: "RiChatVoiceAiFill",
-      label: "AI chat"
-    },
-    {
-      icon: "LuPencilLine",
-      label: "AI writer"
-    },
-    {
-      icon: "CgFileDocument",
-      label: "AI summary"
-    },
-    {
-      icon: "RiSearchEyeLine",
-      label: "AI search"
-    },
-    {
-      icon: "CgFileDocument",
-      label: "AI translator"
-    },
-    {
-      icon: "RiImageAiLine",
-      label: "AI art creator"
-    }
-  ],
-  featureImage: {
-    src: "../assets/Aiwriter.png",
-    alt: "AI writer preview"
-  }
 };
 
 export default function Feature() {
